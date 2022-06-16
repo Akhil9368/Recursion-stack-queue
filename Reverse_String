@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Reverse_string {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the String to Reverse :");
+        char [] str1 = sc.nextLine().toCharArray();
+        int i=0;
+        int j=str1.length-1;
+        Swap(i,j,str1);
+        System.out.println(String.valueOf(str1));
+    }
+
+ private static void Swap(int i,int j,char [] str1) {
+        int n =str1.length;
+        if( i== n/2)return ;
+         char ch = str1[i];
+         str1[i] = str1[j];
+         str1[j] = ch;
+     Swap(i+1,j-1,str1);
+    }
+}
