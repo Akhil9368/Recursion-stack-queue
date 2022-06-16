@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Sum_of_Digit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value that want to print the sum of Digit");
+        int n = sc.nextInt();
+        System.out.println("The Sum of Digit is :");
+        int res = sum(n);
+        System.out.println(res);
+    }
+
+    private static int sum(int i) {
+        if(i==0){
+            return 0;
+        }
+        int val = i%10;
+        int resut = sum(i/10);
+        return val+resut;
+    }
+}
