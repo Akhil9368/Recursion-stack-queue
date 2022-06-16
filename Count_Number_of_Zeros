@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class No_of_Zeros {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a Number to count Zeros");
+
+        int n = sc.nextInt();
+
+        int result = count(n);
+        System.out.println("The Number of Zeros " + result);
+    }
+
+    private static int count(int n) {
+        if(n==0){
+            return 0;
+        }
+        int resu = count(n/10 );
+        int val =n%10;
+        int count =0;
+        if(val==0){
+            count++;
+        }
+        return resu + count;
+    }
+}
