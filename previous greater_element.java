@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class Previous_Greater_Element {
+    // o(n)
     public static ArrayList<Integer> prec(int [] arr){
         Stack<Integer> st = new Stack<>();
         ArrayList arr1= new ArrayList();
@@ -24,3 +25,23 @@ public class Previous_Greater_Element {
 
     }
 }
+
+
+
+//Another  Way o(n^2)
+    public static ArrayList<Integer> approach1(int [] arr){
+         ArrayList<Integer> arr1 =new ArrayList<>();
+        for(int i=0;i< arr.length;i++){
+            int j;
+            for( j = i-1;j>=0;j--){
+                if(arr[j] > arr[i]){
+                    arr1.add(arr[j]);
+                    break;
+                }
+            }
+            if(j==-1){
+                arr1.add(-1);
+            }
+        }
+        return arr1;
+    }
